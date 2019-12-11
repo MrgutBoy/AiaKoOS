@@ -1,5 +1,15 @@
 #include "kernel.h"
 #include <stddef.h>
+// Indice para o buffer Array MemoMgmt de vídeo
+uint32 vga_index;
+
+// contador teste para input além de stdout 
+// 32 bits ou 4 octetos contendo true estático.
+static uint32 nextLineIndex = 1;
+
+// fore & back colors values to in
+uint8 g_fore_color = WHITE, g_back_color = BLUE;
+
 uint16 vga_entry(unsigned char ch, uint8 fore_color, uint8 back_color)
 {
 	uint16 ax = 0;
